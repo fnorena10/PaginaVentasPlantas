@@ -1,80 +1,68 @@
+
 <template>
-    <div class="login-container">
-      <div class="login-form">
-        <h3 class="login-title">Iniciar Sesión</h3>
-        <q-input
-          outlined
-          dense
-          v-model="username"
-          label="Usuario"
-          class="login-input"
-          color="yellow"
-        />
-        <q-input
-          outlined
-          dense
-          v-model="password"
-          label="Contraseña"
-          type="password"
-          class="login-input" 
-          color="yellow"
-        />
-        <q-btn
-          color="black"
-          label="Aceptar"
-          @click="login"
-          class="login-button"
-        />
-      </div>
+  <div class="row">
+    <div class="col-12" >
+      <span style="color: yellow;">Mi cuenta/Acceder</span>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        username: "",
-        password: ""
-      };
-    },
-    methods: {
-      login() {
-        // Agrega aquí la lógica de inicio de sesión
-        // Puedes validar las credenciales, realizar una solicitud al servidor, etc.
-        console.log("Usuario:", this.username);
-        console.log("Contraseña:", this.password);
+  </div>
+  <div class="login-container">
+    <q-page>
+      <q-page-container>
+        <div class="q-pa-md" align="center">
+          <q-card class="q-pa-md" color="background">
+            <router-link to="Inicio">
+              <q-img
+                src="../assets/logo.png"
+          
+                style="max-width: 250px">
+              </q-img>
+            </router-link>
+            <div class="q-mb-md text-h6">Iniciar sesión</div>
+            <q-input outlined label-color="yellow" color="green" v-model="email" label="Nombre de usuario o Correo electrónico" />
+            <q-input outlined label-color="yellow" color="green"  v-model="password" label="Contraseña" type="password" />
+            <q-btn flat style="color: green;" label="Acceder" @click="login"  />
+            <q-btn flat style="color: yellow;" label="¿Olvidaste la contraseña?"  />
+          </q-card>
+          
+        </div>
+      </q-page-container>
+    </q-page>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      email: '',
+      password: '',
+    };
+  },
+  methods: {
+    login() {
+      if (this.password !== '') {
+        // Redirige al usuario a StockPlanta.vue
+        this.$router.push('/Stock-planta');
+      } else {
+        // Muestra una alerta y limpia los campos
+        alert('Debe ingresar cualquier letra en ambos campos');
+        this.password = ''; // Limpia el campo de contraseña
       }
-    }
-  };
-  </script>
-  
-  <style scoped>
-  .login-container {
-    background-color: black;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .login-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-  }
-  
-  .login-title {
-    margin-bottom: 20px;
-  }
-  
-  .login-input {
-    margin-bottom: 10px;
-    
-  }
-  
-  .login-button {
-    margin-top: 20px;
-  }
-  </style>
+    },
+  },
+};
+</script>
+
+<style scoped>
+/* Estilos personalizados para el componente de inicio de sesión */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.q-card {
+  width: 300px;
+}
+</style>

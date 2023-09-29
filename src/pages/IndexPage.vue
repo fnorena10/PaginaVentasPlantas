@@ -36,22 +36,24 @@
     <hr>
     <div class="row" align="center">
       <div class="col-3">
-        <q-btn :ripple="false" color="secondary" label="No ripple" no-caps />
+        <q-btn @click="recargar" :ripple="false" color="secondary" label="Inicio" no-caps />
 
       </div>
       <div class="col-3">
-        <q-btn color="yellow" label="Basic Menu">
+        <q-btn color="yellow" label="Productos">
         <q-menu>
           <q-list style="min-width: 100px">
             <q-item clickable v-close-popup>
-              <q-item-section>New tab</q-item-section>
+              <q-item-section>Arboles</q-item-section>
             </q-item>
-            <q-item clickable v-close-popup>
-              <q-item-section>New incognito tab</q-item-section>
-            </q-item>
+            <router-link to="/Plantas-filtro">
+              <q-item clickable v-close-popup >
+                <q-item-section>Plantas</q-item-section>
+              </q-item>
+            </router-link>
             <q-separator />
             <q-item clickable v-close-popup>
-              <q-item-section>Recent tabs</q-item-section>
+              <q-item-section>Insumos</q-item-section>
             </q-item>
             
           </q-list>
@@ -59,10 +61,10 @@
       </q-btn>
       </div>
       <div class="col-3">
-        <q-btn :ripple="false" color="secondary" label="No ripple" no-caps />
+        <q-btn :ripple="false" color="secondary" label="Acerca de nosotros" no-caps />
       </div>
       <div class="col-3">
-        <q-btn :ripple="false" color="secondary" label="No ripple" no-caps />
+        <q-btn :ripple="false" color="secondary" label="Contacto" no-caps />
       </div>
     </div>
   
@@ -98,6 +100,36 @@
           <q-card-section>
             <div>Producto 1</div>
             <div>Precio: $10.00</div>
+            <div>Disponible</div>
+            <q-btn flat style="color: green;" label="Ver mas..."  @click="icon = true" />
+            <q-dialog v-model="icon">
+              <q-card>
+                <q-card-section class="row items-center q-pb-none">
+                  <div class="text-h6">Anturio</div>
+                  <q-space />
+                  <q-btn icon="close" flat round dense v-close-popup />
+                </q-card-section>
+
+                <q-card-section>
+                 <div class="row" align="center">
+                  <div class="col-6">
+                    <p style="color: #ece910;">Los anturios son originarios
+                       de las selvas tropicales de América Central y América del Sur. 
+                       Estas condiciones de crecimiento naturales hacen que sean plantas ideales para interiores,
+                        ya que prosperan en un ambiente cálido y húmedo</p>
+                    
+
+                  </div>
+                  <div class="col-6">
+                    <q-img 
+                      src="/src/assets/planta1.jpg"
+                      alt="Producto 1"
+                    />
+                  </div>
+                 </div>
+                </q-card-section>
+              </q-card>
+            </q-dialog>
           </q-card-section>
         </q-card>
       </q-col>
@@ -112,6 +144,36 @@
           <q-card-section>
             <div>Producto 2</div>
             <div>Precio: $15.00</div>
+            <div>Disponible</div>
+            <q-btn flat style="color: green;" label="Ver mas..."  @click="icon = true" />
+            <q-dialog v-model="icon">
+              <q-card>
+                <q-card-section class="row items-center q-pb-none">
+                  <div class="text-h6">Anturio</div>
+                  <q-space />
+                  <q-btn icon="close" flat round dense v-close-popup />
+                </q-card-section>
+
+                <q-card-section>
+                 <div class="row" align="center">
+                  <div class="col-6">
+                    <p style="color: #ece910;">Los anturios son originarios
+                       de las selvas tropicales de América Central y América del Sur. 
+                       Estas condiciones de crecimiento naturales hacen que sean plantas ideales para interiores,
+                        ya que prosperan en un ambiente cálido y húmedo</p>
+                    
+
+                  </div>
+                  <div class="col-6">
+                    <q-img 
+                      src="/src/assets/planta1.jpg"
+                      alt="Producto 1"
+                    />
+                  </div>
+                 </div>
+                </q-card-section>
+              </q-card>
+            </q-dialog>
           </q-card-section>
         </q-card>
       </q-col>
@@ -126,6 +188,36 @@
           <q-card-section>
             <div>Producto 3</div>
             <div>Precio: $20.00</div>
+            <div>Disponible</div>
+            <q-btn flat style="color: green;" label="Ver mas..."  @click="icon = true" />
+            <q-dialog v-model="icon">
+              <q-card>
+                <q-card-section class="row items-center q-pb-none">
+                  <div class="text-h6">Anturio</div>
+                  <q-space />
+                  <q-btn icon="close" flat round dense v-close-popup />
+                </q-card-section>
+
+                <q-card-section>
+                 <div class="row" align="center">
+                  <div class="col-6">
+                    <p style="color: #ece910;">Los anturios son originarios
+                       de las selvas tropicales de América Central y América del Sur. 
+                       Estas condiciones de crecimiento naturales hacen que sean plantas ideales para interiores,
+                        ya que prosperan en un ambiente cálido y húmedo</p>
+                    
+
+                  </div>
+                  <div class="col-6">
+                    <q-img 
+                      src="/src/assets/planta1.jpg"
+                      alt="Producto 1"
+                    />
+                  </div>
+                 </div>
+                </q-card-section>
+              </q-card>
+            </q-dialog>
           </q-card-section>
         </q-card>
       </q-col>
@@ -141,6 +233,36 @@
           <q-card-section>
             <div>Producto 1</div>
             <div>Precio: $10.00</div>
+            <div>Disponible</div>
+            <q-btn flat style="color: green;" label="Ver mas..."  @click="icon = true" />
+            <q-dialog v-model="icon">
+              <q-card>
+                <q-card-section class="row items-center q-pb-none">
+                  <div class="text-h6">Anturio</div>
+                  <q-space />
+                  <q-btn icon="close" flat round dense v-close-popup />
+                </q-card-section>
+
+                <q-card-section>
+                 <div class="row" align="center">
+                  <div class="col-6">
+                    <p style="color: #ece910;">Los anturios son originarios
+                       de las selvas tropicales de América Central y América del Sur. 
+                       Estas condiciones de crecimiento naturales hacen que sean plantas ideales para interiores,
+                        ya que prosperan en un ambiente cálido y húmedo</p>
+                    
+
+                  </div>
+                  <div class="col-6">
+                    <q-img 
+                      src="/src/assets/planta1.jpg"
+                      alt="Producto 1"
+                    />
+                  </div>
+                 </div>
+                </q-card-section>
+              </q-card>
+            </q-dialog>
           </q-card-section>
         </q-card>
       </q-col>
@@ -155,6 +277,36 @@
           <q-card-section>
             <div>Producto 2</div>
             <div>Precio: $15.00</div>
+            <div>Disponible</div>
+            <q-btn flat style="color: green;" label="Ver mas..."  @click="icon = true" />
+            <q-dialog v-model="icon">
+              <q-card>
+                <q-card-section class="row items-center q-pb-none">
+                  <div class="text-h6">Anturio</div>
+                  <q-space />
+                  <q-btn icon="close" flat round dense v-close-popup />
+                </q-card-section>
+
+                <q-card-section>
+                 <div class="row" align="center">
+                  <div class="col-6">
+                    <p style="color: #ece910;">Los anturios son originarios
+                       de las selvas tropicales de América Central y América del Sur. 
+                       Estas condiciones de crecimiento naturales hacen que sean plantas ideales para interiores,
+                        ya que prosperan en un ambiente cálido y húmedo</p>
+                    
+
+                  </div>
+                  <div class="col-6">
+                    <q-img 
+                      src="/src/assets/planta1.jpg"
+                      alt="Producto 1"
+                    />
+                  </div>
+                 </div>
+                </q-card-section>
+              </q-card>
+            </q-dialog>
           </q-card-section>
         </q-card>
       </q-col>
@@ -169,10 +321,68 @@
           <q-card-section>
             <div>Producto 3</div>
             <div>Precio: $20.00</div>
+            <div>Disponible</div>
+            <q-btn flat style="color: green;" label="Ver mas..."  @click="icon = true" />
+            <q-dialog v-model="icon">
+              <q-card>
+                <q-card-section class="row items-center q-pb-none">
+                  <div class="text-h6">Anturio</div>
+                  <q-space />
+                  <q-btn icon="close" flat round dense v-close-popup />
+                </q-card-section>
+
+                <q-card-section>
+                 <div class="row" align="center">
+                  <div class="col-6">
+                    <p style="color: #ece910;">Los anturios son originarios
+                       de las selvas tropicales de América Central y América del Sur. 
+                       Estas condiciones de crecimiento naturales hacen que sean plantas ideales para interiores,
+                        ya que prosperan en un ambiente cálido y húmedo</p>
+                        <span>Diponible</span>
+                        <hr>
+                        <span>50.000$ + Envio</span>
+                        <q-btn flat style="color: green;" label="Añadir al carrito" />
+                    
+
+                  </div>
+                  <div class="col-6">
+                    <q-img 
+                      src="/src/assets/planta1.jpg"
+                      alt="Producto 1"
+                    />
+                  </div>
+                 </div>
+                </q-card-section>
+              </q-card>
+            </q-dialog>
           </q-card-section>
         </q-card>
       </q-col>
     </q-row>
+    <div class="row" align="center">
+      <div class="col-4">
+        <h5 style="color: #ece910;">Síguenos en <span style="color: green;">Instagram</span></h5>
+        <h6 style="color: #ece910;">MercaPlantas123</h6>
+        <hr>
+        <h6 style="color: #ece910;">Fncolorado@misena.edu.co</h6>
+      </div>
+      <div class="col-4">
+        <h6 style="color: #ece910;">Preguntas frecuentes</h6>
+        <h6 style="color: #ece910;">Nuestas sedes</h6>
+        <h6 style="color: #ece910;">Ultimas noticias</h6>
+      
+
+      </div>
+      <div class="col-4">
+        <q-img
+        src="../assets/logo.png"
+        
+        style="max-width: 250px">
+        </q-img>
+        
+      </div>
+      
+    </div>
     
   </div>
 </template>
@@ -185,19 +395,21 @@ import { ref } from 'vue';
     setup () {
       return {
         slide: ref(1),
-        search: null
+        search: null,
+        icon: ref(false),
       }
     },
-    components: {
+    methods: {
+      recargar(){
+        location.reload();
+      }
       
     }
   }
 </script>
 
 <style lang="css">
-  .principal {
-   
-  }
+  
  .word-container {
     position: absolute;
     top: 0;
